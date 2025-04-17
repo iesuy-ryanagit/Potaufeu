@@ -1,0 +1,125 @@
+/* 全体のレイアウトと背景 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* 白背景 */
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ポートフォリオ全体 */
+  .portfolio {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* ヘッダーのスタイル */
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    color: #3498db; /* 青色 */
+    margin: 0;
+  }
+  
+  /* セクションごとのスタイル */
+  section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #5dade2; /* 少し濃い青色 */
+    border-bottom: 2px solid #3498db; /* 青色のボーダー */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #3498db; /* 青色 */
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+  }
+  
+  /* GitHubリンクのスタイル */
+  footer p {
+    text-align: center;
+    font-size: 1rem;
+    color: #7f8c8d; /* ダークグレー */
+  }
+  
+  footer a {
+    color: #3498db; /* 青色 */
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* セクションごとの背景色と余白 */
+  section:nth-child(odd) {
+    background-color: #f4f9fc; /* 青の薄い背景 */
+  }
+  
+  section:nth-child(even) {
+    background-color: #ffffff; /* 白背景 */
+  }
+  
+  footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #5dade2; /* 青色 */
+    color: #fff;
+  }
+  
+  /* モバイル用調整 */
+  @media (max-width: 768px) {
+    .portfolio {
+      width: 95%;
+    }
+  
+    header h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .project-page {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f4f9fc; /* 青の薄い背景 */
+  }
+  
+  .project-page h2 {
+    font-size: 2rem;
+    color: #3498db;
+  }
+  
+  .project-page p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  

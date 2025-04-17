@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      target: dev  # 'dev' ステージでビルドする
+    ports:
+      - "5173:5173"  # 開発モードで Vite のサーバーを 3000 ポートで公開
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
