@@ -12,3 +12,7 @@ stop:
 	docker stop $(CONTAINER_NAME) || true
 	docker rm $(CONTAINER_NAME) || true
 
+
+publish:
+	npm run build
+	npx gh-pages -d dist
