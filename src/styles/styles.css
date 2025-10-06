@@ -123,3 +123,14 @@ body {
     line-height: 1.6;
   }
   
+  .app-container {
+  display: flex;
+}
+
+.nav-container {
+  width: 250px; /* 固定幅 */
+}
+
+.main-content {
+  flex: 1; /* 残りの幅を占める */
+}

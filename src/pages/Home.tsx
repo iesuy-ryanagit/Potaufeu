@@ -13,32 +13,6 @@ const Home = () => {
         </p>
       </section>
       <section style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2rem', marginBottom: '2rem' }}>
-        <h2 style={{ color: '#2563eb', marginBottom: '1rem' }}>スキル</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
-          <div>
-            <h3 style={{ marginBottom: '0.5rem' }}>プログラミング言語</h3>
-            <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
-              <li>C++</li>
-              <li>C</li>
-              <li>Python</li>
-              <li>Go</li>
-              <li>React</li>
-              <li>JavaScript</li>
-              <li>TypeScript</li>
-              <li>HTML / CSS</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{ marginBottom: '0.5rem' }}>データベース</h3>
-            <ul style={{ margin: 0, paddingLeft: '1.2rem' }}>
-              <li>MySQL</li>
-              <li>MariaDB</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2rem', marginBottom: '2rem' }}>
         <h2 style={{ color: '#2563eb', marginBottom: '1rem' }}>42Tokyo</h2>
         <p>
           <a href="https://42tokyo.jp/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
@@ -49,7 +23,7 @@ const Home = () => {
         <ul style={{ paddingLeft: '1.2rem' }}>
           <li>
             <Link to="/Potaufeu/fttokyo" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-              42Tokyo Project（プロジェクトページへ）
+              What is 42Tokyo?
             </Link>
           </li>
         </ul>
