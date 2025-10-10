@@ -29,7 +29,7 @@ jobs:
       - run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1   # ← v1に修正
+        uses: actions/upload-pages-artifact@v4   # ← v1に修正
         with:
           path: ./dist
 
