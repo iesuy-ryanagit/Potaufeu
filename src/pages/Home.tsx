@@ -22,7 +22,7 @@ const Home = () => {
         </p>
         <ul style={{ paddingLeft: '1.2rem' }}>
           <li>
-            <Link to="/Potaufeu/fttokyo" style={{ color: '#2563eb', textDecoration: 'underline' }}>
+            <Link to="/fttokyo" style={{ color: '#2563eb', textDecoration: 'underline' }}>
               What is 42Tokyo?
             </Link>
           </li>
@@ -30,28 +30,17 @@ const Home = () => {
       </section>
       <section style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2rem', marginBottom: '2rem' }}>
         <h2 style={{ color: '#2563eb', marginBottom: '1rem' }}>研究</h2>
-        <p>大学院で農業に画像処理技術を活用する研究に従事しています。</p>
+        <p>大学院で農業に画像処理技術を活用する研究に従事しています。営農現場における情報処理技術の活用について研究しております。
+            
+        </p>
         <ul style={{ paddingLeft: '1.2rem' }}>
-          <li>学会発表:
-            <a href="https://www.jsai.or.jp/%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A%E7%AD%89" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-              農業情報学会
-            </a>
-          </li>
-          <li>論文:
-            <a href="https://www.mdpi.com/2673-4117/6/9/232" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-            Estimation of Growth Parameters of Eustoma grandiflorum Using Smartphone 3D Scanner
-            </a>
-          </li>
-          <li>
-            所属研究室：
-            <a href="https://joho.en.a.u-tokyo.ac.jp/" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'underline' }}>
-              研究室サイト
-            </a>
-          </li>
+            <Link to="/study" style={{ color: '#2563eb', textDecoration: 'underline' }}>
+              研究ページへ
+            </Link>
         </ul>
       </section>
       <section style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2rem', marginBottom: '2rem', textAlign: 'center' }}>
-        <h2 style={{ color: '#2563eb', marginBottom: '1rem' }}>各種リンク</h2>
+        <h2 style={{ color: '#2563eb', marginBottom: '1rem' }}>Githubリンク</h2>
         <a
           href="https://github.com/iesuy-ryanagit"
           target="_blank"

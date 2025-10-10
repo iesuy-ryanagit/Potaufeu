@@ -5,6 +5,7 @@ export default function Career() {
       period: "2021.04 - 2025.03",
       title: "東京大学 農学部",
       description: "農業情報について学びました。プログラミングや統計、データ解析など幅広く学び、卒業論文では機械学習を用いた研究を行いました。",
+      technology: "Python,PyTorch,Open3D,OpenCV,Cuda",
       category: "学歴",
       links: { label: "公式サイト", url: "https://joho.en.a.u-tokyo.ac.jp/" },
     },
@@ -12,6 +13,7 @@ export default function Career() {
       period: "2024.04 - 現在",
       title: "東京大学大学院 農学生命科学研究科",
       description: "研究テーマ: スマート農業などについて研究しています。PointNet/PointNet++などの機械学習や三次元点群を対象とするデータ処理や統計などを扱います。",
+      technology: "Python,PyTorch,Open3D,OpenCV,Linux",
       category: "学歴",
       links: { label: "公式サイト", url: "https://joho.en.a.u-tokyo.ac.jp/" },
     },
@@ -19,6 +21,7 @@ export default function Career() {
       period: "2023.09 - 2024.3",
       title: "42Tokyo",
       description: "低レイヤーからWeb開発まで幅広く学習。bashやNginxなどの再実装やWebアプリゲーム開発チーム開発を経験。",
+      technology: "C,C++,Python,Django,MySQL,Docker,Virtual Machine,Linux",
       category: "スクール",
       links: { label: "公式サイト", url: "https://42tokyo.jp/" },
     },
@@ -26,6 +29,7 @@ export default function Career() {
       period: "2023.03 - 2023.05",
       title: "株式会社Almondo",
       description: "生成AIコミュニティ「ExSeed」の運営を担当。AIの最新情報の収集やイベント企画などを行いました。",
+      technology: "Python,Streamlit,GAS,Github Actions",
       category: "インターン",
       links: { label: "公式サイト", url: "https://almondotech.com/" },
     },
@@ -33,6 +37,7 @@ export default function Career() {
       period: "2025.04 - 現在",
       title: "株式会社Irvine Systems",
       description: "Web開発のインターン。ソフトウェアエンジニアとしてFlaskを用いたWebアプリケーションの設計・開発・テストなどさまざまな工程を担当しています。",
+      technology: "Python Flask",
       category: "インターン",
       links: { label: "公式サイト", url: "https://irvinesystems.co.jp/" },
     },
@@ -99,7 +104,11 @@ export default function Career() {
                     </svg>
                   </a>
                 )}
-
+                {c.technology && (
+                  <div style={{ fontSize: "0.9rem", color: "#444", marginBottom: "0.5rem" }}>
+                    <span style={{ fontWeight: 600, color: "#2563eb" }}>技術:</span> {c.technology}
+                  </div>
+                )}
                 <p style={{ margin: 0, color: "#555" }}>{c.description}</p>
               </li>
             ))}

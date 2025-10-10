@@ -6,7 +6,7 @@ const projects = [
   {
     name: "Webアプリサンプル",
     languages: ["JavaScript", "Python"],
-    keywords: ["Web", "Django","Docker","RESTful API","PostgreSQL","2FA","42Tokyo"],
+    keywords: ["Web", "Django","Docker","RESTful API","PostgreSQL","2FA","42Tokyo","Nginx","Bootstrap"],
     repo: { url: "https://github.com/iesuy-ryanagit/ft_transcendence_koko", label: "ft_transcendence" },
     description: "42Tokyoの最終課題にてチーム開発を行なったWebアプリ",
     type: "チーム",
@@ -15,8 +15,8 @@ const projects = [
     name: "Go言語によるOpenTelemetryの導入",
     languages: ["Go"],
     keywords: ["OpenTelemetry", "SQL","分散トレーシング","マイクロサービス","サイボウズ"],
-    repo: { url: "https://github.com", label: "サイボウズ記事" },
-    description: "Go言語製のWebアプリにOpenTelemetryを導入し、分散トレーシングとメトリクス収集を実装したプロジェクト。",
+    repo: { url: "https://blog.cybozu.io/entry/2025/10/06/170000", label: "サイボウズ記事" },
+    description: "Go言語製のアプリケーションにOpenTelemetryを導入し、分散トレーシングとメトリクス収集を実装したプロジェクト。",
     type: "インターン",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     languages: ["TypeScript", "Go"],
     keywords: ["Kubernetes","minikube","React","Go","TypeScript"],
     repo: { url: "https://github.com/iesuy-ryanagit/main_system", label: "お小遣い管理アプリ" },
-    description: "個人で開発中のお小遣い管理アプリを、Kubernetesを用いてGCP上で運用する予定。",
+    description: "個人で開発中のお小遣い管理アプリ",
     type: "個人"
     // 公開URLなし
   },
@@ -33,7 +33,7 @@ const projects = [
     languages: ["TypeScript"],
     keywords: ["React","TypeScript","Vite","CSS","ポートフォリオサイト"],
     repo: { url: "https://github.com/iesuy-ryanagit/Potaufeu", label: "ポートフォリオサイト" },
-    description: "このポートフォリオサイト。ReactとTypeScriptで作成。",
+    description: "このポートフォリオサイト",
     type: "個人",
   },
     {
@@ -68,6 +68,15 @@ const projects = [
     keywords: ["bash","シェル","bash","pipe","dup","42Tokyo"],
     repo: { url: "https://github.com/iesuy-ryanagit/minishell", label: "minishell" },
     description: "42Tokyoにて作成したbashの再実装",
+    type: "チーム"
+    // 公開URLなし
+    },
+    {
+    name: "自動水やりシステム",
+    languages: ["Arduino(C/C++)"],
+    keywords: ["ESP32","ハード","ハッカソン","LLM","42Tokyo"],
+    repo: { url: "https://github.com/iesuy-ryanagit/reazon_hack_e", label: "レアゾン" },
+    description: "42Tokyoのハッカソンにて作成した、ESP32によるLLM(OpenAI API)を活用した自動水やりシステムです",
     type: "チーム"
     // 公開URLなし
     }

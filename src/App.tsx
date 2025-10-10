@@ -15,6 +15,7 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import PageWrapper from './components/PageWrapper';
 import Career from './pages/Career';
+import Study from './pages/Study';
 import './styles/App.css';
 import image from './images/blue_rose.jpg';
 
@@ -41,9 +42,10 @@ const App = () => {
             <Route path="/" element={<Navigate to="home" replace />} />
             <Route path="/home" element={<PageWrapper><Home /></PageWrapper>} />
             <Route path="/fttokyo" element={<PageWrapper><FTTokyo /></PageWrapper>} />
-            <Route path="/Projects" element={<PageWrapper><Projects /></PageWrapper>} />
+            <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
             <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
+            <Route path="/study" element={<PageWrapper><Study /></PageWrapper>} />
           </Routes>
 
           {shouldDisplayImage && (

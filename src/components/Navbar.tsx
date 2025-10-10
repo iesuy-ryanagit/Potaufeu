@@ -1,3 +1,4 @@
+import { label } from 'framer-motion/client';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -12,12 +13,22 @@ const navLinks = [
     ),
   },
   {
-    to: '/Projects',
+    to: '/projects',
     label: 'Projects',
     icon: (
       <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style={{ verticalAlign: 'middle', marginRight: 6 }}>
         <rect x="4" y="4" width="16" height="16" rx="4" stroke="#2563eb" strokeWidth="2"/>
         <path d="M8 12h8M12 8v8" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
+  },
+  {
+    to: '/study',
+    label: 'Study',
+    icon: (
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" style={{ verticalAlign: 'middle', marginRight: 6 }}>
+        <path d="M12 2l7 4v6c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V6l7-4z" stroke="#2563eb" strokeWidth="2" strokeLinejoin="round"/>
+        <path d="M9 10h6M9 14h6" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
   },
@@ -53,7 +64,7 @@ const navLinks = [
 const Navbar = () => {
   const location = useLocation();
   return (
-    <nav className="nav-container" aria-label="Main navigation">
+    <nav className="nav-container" aria-label="Main navigation" style={{ width: "100%" }}>
       {navLinks.map(link => (
         <Link
           key={link.to}
