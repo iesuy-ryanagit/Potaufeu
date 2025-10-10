@@ -31,7 +31,7 @@ const projects = [
   {
     name: "ポートフォリオサイト",
     languages: ["TypeScript"],
-    keywords: ["React","TypeScript","Vite","CSS","ポートフォリオサイト"],
+    keywords: ["React","TypeScript","Vite","CSS","Github Actions","ポートフォリオサイト"],
     repo: { url: "https://github.com/iesuy-ryanagit/Potaufeu", label: "ポートフォリオサイト" },
     description: "このポートフォリオサイト",
     type: "個人",
