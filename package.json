@@ -9,6 +9,7 @@
         "deploy": "gh-pages -d build"
     },
     "dependencies": {
+        "@remix-run/router": "^1.23.0",
         "@types/react-router-dom": "^5.3.3",
         "framer-motion": "^12.7.4",
         "lucide-react": "^0.544.0",
