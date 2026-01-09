@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
@@ -9,15 +10,15 @@ const projects = [
     keywords: ["Web", "Django", "Docker", "RESTful API", "PostgreSQL", "2FA", "42Tokyo", "Nginx", "Bootstrap"],
     repo: { url: "https://github.com/iesuy-ryanagit/ft_transcendence_koko", label: "ft_transcendence" },
     description: "42Tokyoの最終課題にてチーム開発を行なったWebアプリ",
-    publicUrl: "https://ft-transcendence-koko.vercel.app/",
+    publicUrl: {url: "https://ft-transcendence-koko.vercel.app/", label: "公開サイト"},
     type: "チーム",
   },
   {
     name: "Go言語によるOpenTelemetryの導入",
     languages: ["Go"],
     keywords: ["OpenTelemetry", "SQL", "分散トレーシング", "マイクロサービス", "サイボウズ"],
-    repo: { url: "https://blog.cybozu.io/entry/2025/10/06/170000", label: "サイボウズ記事" },
     description: "Go言語製のアプリケーションにOpenTelemetryを導入し、分散トレーシングとメトリクス収集を実装したプロジェクト。",
+    publicUrl: {url: "https://blog.cybozu.io/entry/2025/10/06/170000", label: "公開記事"},
     type: "インターン",
   },
   {
@@ -43,7 +44,7 @@ const projects = [
     repo: { url: "https://github.com/iesuy-ryanagit/simple_chatbot", label: "シンプルチャットボット" },
     description: "Hugging FaceのAPIを呼び出して使うシンプルなチャットボットwebアプリ",
     type: "個人",
-    publicUrl: "https://simple-chatbot-six-alpha.vercel.app/",
+    publicUrl: {url: "https://simple-chatbot-six-alpha.vercel.app/", label: "公開サイト"},
   },
   {
     name: "Nginx再実装",
@@ -84,16 +85,15 @@ const projects = [
     repo: { url: "https://github.com/iesuy-ryanagit/interview", label: "Interview Practice System" },
     description: "面接質問を管理・練習するためのシステムで、TypeScript、React、Firebaseを使用して開発しました。個人で面接練習に実際に使用しています。",
     type: "個人",
-    publicUrl: "https://interview-ruddy-pi.vercel.app/",
+    publicUrl: {url: "https://interview-ruddy-pi.vercel.app/", label: "公開サイト"},
   },
     {
     name: "アーヴァインシステムズでのインターン",
     languages: ["Python"],
     keywords: ["Python", "Flask", "Docker","アーヴァインシステムズ"],
-        repo: { url: "https://irvinesystems.co.jp/", label: "アーヴァインシステムズHP" },
     description: "アーヴァインシステムズにてインターンとして参加し、Flaskを用いたWebアプリケーションの開発に従事しました。Dockerを活用して開発環境を構築し、効率的な開発プロセスを実現しました。",
     type: "インターン",
-    publicUrl: "https://interview-ruddy-pi.vercel.app/",
+    publicUrl: {url: "https://irvinesystems.co.jp/", label: "会社サイト"},
   },
 ];
 
@@ -206,8 +206,25 @@ export default function Projects() {
             </div>
 
             <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              <a href={p.repo.url} target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', textDecoration: 'none', padding: '8px 10px', borderRadius: 8, border: '1px solid #e6eefc', background: '#fff' }}>{p.repo.label}</a>
-              {p.publicUrl && <a href={p.publicUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', background: '#10b981', padding: '8px 10px', borderRadius: 8, textDecoration: 'none' }}>公開サイト</a>}
+                {p.repo && (<a
+                href={p.repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={p.repo.label}
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '8px',
+                    borderRadius: 8,
+                    border: '1px solid #e6eefc',
+                    background: '#fff',
+                    color: '#222'
+                }}
+                >
+                <FaGithub size={20} />
+                </a>)}
+              {p.publicUrl && <a href={p.publicUrl.url} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', background: '#10b981', padding: '8px 10px', borderRadius: 8, textDecoration: 'none' }}>{p.publicUrl.label}</a>}
             </div>
           </article>
         ))}
