@@ -32,9 +32,6 @@ const App = () => {
 
   return (
     <>
-      <header>
-        <h1>Ryanagit</h1>
-      </header>
       <Navbar />
       <main>
         <AnimatePresence mode="wait">

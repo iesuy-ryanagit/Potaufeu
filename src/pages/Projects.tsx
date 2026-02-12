@@ -135,44 +135,53 @@ export default function Projects() {
       p.type.toLowerCase().includes(q)
     );
   });
-
   return (
-    <section style={{ background: '#fff', borderRadius: '1rem', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', padding: '2rem', margin: '2rem', width: '100%', maxWidth: 1100 }}>
-      <h1 style={{ color: '#2563eb', marginBottom: '1rem' }}>Projects</h1>
+  <main className="projects-wrapper">
+    <section className="projects-section">
+      <h1 className="projects-title">Projects</h1>
 
       {/* Controls */}
-      <div style={{ display: 'flex', gap: 12, marginBottom: 12, flexWrap: 'wrap' }}>
+      <div className="projects-controls">
         <input
           type="text"
           placeholder="検索（キーワード・言語・種別）..."
           value={query}
           onChange={e => setQuery(e.target.value)}
-          style={{ padding: 8, flex: '1 1 320px', borderRadius: 6, border: '1px solid #ddd' }}
+          className="projects-input"
         />
 
-        <select value={typeFilter} onChange={e => setTypeFilter(e.target.value)} style={{ padding: 8, borderRadius: 6, border: '1px solid #ddd' }}>
+        <select
+          value={typeFilter}
+          onChange={e => setTypeFilter(e.target.value)}
+          className="projects-select"
+        >
           <option value="All">All</option>
           <option value="個人">個人</option>
           <option value="チーム">チーム</option>
           <option value="インターン">インターン</option>
         </select>
 
-        <button onClick={() => { setQuery(''); setTypeFilter('All'); setLangFilters([]); }} style={{ padding: '8px 12px', borderRadius: 6, background: '#f3f4f6', border: '1px solid #ddd' }}>Reset</button>
+        <button
+          onClick={() => {
+            setQuery("");
+            setTypeFilter("All");
+            setLangFilters([]);
+          }}
+          className="projects-reset"
+        >
+          Reset
+        </button>
       </div>
 
       {/* Language toggles */}
-      <div style={{ marginBottom: 18, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      <div className="projects-lang-filters">
         {availableLangs.map(lang => (
           <button
             key={lang}
             onClick={() => toggleLang(lang)}
-            style={{
-              padding: '6px 10px',
-              borderRadius: 999,
-              border: langFilters.includes(lang) ? '1px solid #2563eb' : '1px solid #e5e7eb',
-              background: langFilters.includes(lang) ? '#eff6ff' : '#fff',
-              cursor: 'pointer'
-            }}
+            className={`projects-lang-btn ${
+              langFilters.includes(lang) ? "projects-lang-active" : ""
+            }`}
           >
             {lang}
           </button>
@@ -180,57 +189,82 @@ export default function Projects() {
       </div>
 
       {/* Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 16 }}>
+      <div className="projects-grid">
         {filtered.map(p => (
-          <article key={p.name} style={{ background: '#fff', borderRadius: 12, padding: 16, boxShadow: '0 6px 18px rgba(16,24,40,0.04)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <article key={p.name} className="project-card">
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-                <strong style={{ fontSize: '1.05rem' }}>{p.name}</strong>
-                <span style={{ background: p.type === '個人' ? '#2563eb' : p.type === 'インターン' ? '#ef4444' : '#10b981', color: '#fff', borderRadius: 8, padding: '4px 8px', fontSize: '0.8rem' }}>{p.type}</span>
+              <div className="project-header">
+                <strong>{p.name}</strong>
+                <span
+                  className={`project-badge ${
+                    p.type === "個人"
+                      ? "badge-personal"
+                      : p.type === "インターン"
+                      ? "badge-intern"
+                      : "badge-team"
+                  }`}
+                >
+                  {p.type}
+                </span>
               </div>
 
-              <div style={{ marginTop: 8, marginBottom: 8, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <div className="project-lang-tags">
                 {p.languages.map(lang => (
-                  <span key={lang} style={{ padding: '4px 8px', borderRadius: 6, background: '#f8fafc', border: '1px solid #e6eefc', fontSize: '0.85rem' }}>{lang}</span>
+                  <span key={lang} className="project-lang-tag">
+                    {lang}
+                  </span>
                 ))}
               </div>
 
-              <div style={{ marginBottom: 8 }}>
-                <strong style={{ color: '#2563eb' }}>キーワード:</strong> {p.keywords.join(', ')}
+              <div>
+                <strong className="projects-keyword-title">
+                  キーワード:
+                </strong>{" "}
+                {p.keywords.join(", ")}
               </div>
 
-              <div style={{ marginBottom: 8 }}>
-                <strong style={{ color: '#2563eb' }}>説明:</strong>
-                <p style={{ margin: '6px 0 0 0', color: '#555' }}>{p.description}</p>
+              <div>
+                <strong className="projects-keyword-title">
+                  説明:
+                </strong>
+                <p className="project-description">{p.description}</p>
               </div>
             </div>
 
-            <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                {p.repo && (<a
-                href={p.repo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={p.repo.label}
-                style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '8px',
-                    borderRadius: 8,
-                    border: '1px solid #e6eefc',
-                    background: '#fff',
-                    color: '#222'
-                }}
+            <div className="project-links">
+              {p.repo && (
+                <a
+                  href={p.repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={p.repo.label}
+                  className="project-icon-btn"
                 >
-                <FaGithub size={20} />
-                </a>)}
-              {p.publicUrl && <a href={p.publicUrl.url} target="_blank" rel="noopener noreferrer" style={{ color: '#fff', background: '#10b981', padding: '8px 10px', borderRadius: 8, textDecoration: 'none' }}>{p.publicUrl.label}</a>}
+                  <FaGithub size={20} />
+                </a>
+              )}
+
+              {p.publicUrl && (
+                <a
+                  href={p.publicUrl.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-public-btn"
+                >
+                  {p.publicUrl.label}
+                </a>
+              )}
             </div>
           </article>
         ))}
       </div>
 
-      {filtered.length === 0 && <div style={{ color: '#888', textAlign: 'center', marginTop: 32 }}>該当するプロジェクトはありません</div>}
+      {filtered.length === 0 && (
+        <div className="project-empty">
+          該当するプロジェクトはありません
+        </div>
+      )}
     </section>
-  );
+  </main>
+);
 }

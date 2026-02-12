@@ -50,6 +50,7 @@ export default function Career() {
   }, {} as Record<string, typeof careers>);
 
   return (
+    <main style={{ width: '100%', maxWidth: 800, margin: '0 auto', padding: '2rem 1rem' }}>
     <section
       style={{
         background: "#fff",
@@ -116,5 +117,6 @@ export default function Career() {
         </div>
       ))}
     </section>
+    </main>
   );
 }
