@@ -35,11 +35,11 @@ CMD ["npm", "run", "dev"]
 # 3. 本番用ステージ (軽量な nginx で配信)
 FROM nginx:alpine AS production
 
-# ビルド成果物をnginxの公開ディレクトリへ
-COPY --from=build /app/build /usr/share/nginx/html
+# # ビルド成果物をnginxの公開ディレクトリへ
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Nginx ポート設定
-EXPOSE 5173
+EXPOSE 80
 
 # nginx を起動する
 CMD ["nginx", "-g", "daemon off;"]

@@ -3,7 +3,7 @@ CONTAINER_NAME=react-container
 PORT=3000
 
 build:
-	docker build -t $(IMAGE_NAME) .
+	docker build -t $(IMAGE_NAME) . --no-cache
 
 run:
 	docker run -d --name $(CONTAINER_NAME) -p $(PORT):80 $(IMAGE_NAME)

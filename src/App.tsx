@@ -15,6 +15,8 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import PageWrapper from './components/PageWrapper';
 import Career from './pages/Career';
+import SoLong from './pages/SoLong';
+import Libft from './pages/Libft';
 import './styles/App.css';
 import image from './images/blue_rose.jpg';
 
@@ -26,7 +28,8 @@ const App = () => {
     location.pathname === '/Projects' ||
     location.pathname === '/fttokyo' ||
     location.pathname === '/contact' ||
-    location.pathname === '/career'
+    location.pathname === '/career' ||
+    location.pathname === '/projects/so_long'
   );
 
   return (
@@ -44,6 +47,8 @@ const App = () => {
             <Route path="/Projects" element={<PageWrapper><Projects /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
             <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
+            <Route path="/projects/so_long" element={<SoLong />} />
+            <Route path="/projects/libft" element={<Libft />} />
           </Routes>
 
           {shouldDisplayImage && (

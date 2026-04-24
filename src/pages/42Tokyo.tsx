@@ -19,6 +19,20 @@ const FTTokyo = () => {
             </Link>
           </li>
         </ul>
+        <ul style={{ paddingLeft: '1.2rem' }}>
+          <li>
+            <Link to="/projects/libft" style={{ color: '#2563eb', textDecoration: 'underline' }}>
+              libft
+            </Link>
+          </li>
+        </ul>
+        <ul style={{ paddingLeft: '1.2rem' }}>
+          <li>
+            <Link to="/projects/so_long" style={{ color: '#2563eb', textDecoration: 'underline' }}>
+              so_long（2Dゲーム）
+            </Link>
+          </li>
+        </ul>
       </section>
     </main>
   );
